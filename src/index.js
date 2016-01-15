@@ -4,7 +4,7 @@ import integrationsManager from './integrations-manager';
 import handlers from './handlers';
 // import Store from './store';
 
-export { reactIntegration as reactIntegratio };
+export { reactIntegration as reactIntegration };
 export { nodes as nodes };
 export { integrationsManager as integrationsManager };
 export { handlers as handlers };
