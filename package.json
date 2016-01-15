@@ -1,0 +1,26 @@
+{
+  "name": "react-webpack-rails",
+  "version": "0.0.1",
+  "description": "react_webpack_raiils integration - js part",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mxaly/rwr-integration.git"
+  },
+  "keywords": [
+    "rwr",
+    "react",
+    "webpack",
+    "rails",
+    "react_webpack_rails"
+  ],
+  "author": "Rafał Gawlik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mxaly/rwr-integration/issues"
+  },
+  "homepage": "https://github.com/mxaly/rwr-integration#readme"
+}
