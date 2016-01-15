@@ -1,6 +1,6 @@
 {
-  "name": "react-webpack-rails",
-  "version": "0.0.2",
+  "name": "rwr-integration",
+  "version": "0.0.1",
   "description": "react_webpack_raiils integration - js part",
   "main": "lib/index.js",
   "scripts": {
