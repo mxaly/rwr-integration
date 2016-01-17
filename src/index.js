@@ -1,13 +1,12 @@
 import reactIntegration from './react-integration';
 import nodes from './nodes';
 import integrationsManager from './integrations-manager';
-import handlers from './handlers';
-// import Store from './store';
+import env from './env';
 
 export { reactIntegration as reactIntegration };
 export { nodes as nodes };
 export { integrationsManager as integrationsManager };
-export { handlers as handlers };
+export { env as env };
 
 export default {
   registerComponent: reactIntegration.registerComponent,
@@ -15,12 +14,6 @@ export default {
   createComponent: reactIntegration.createComponent,
   renderComponent: reactIntegration.renderComponent,
   unmountComponent: reactIntegration.unmountComponent,
-
-  run: () => {
-    if (typeof Turbolinks !== 'undefined' && Turbolinks.supported) {
-      handlers.handleTurbolinksEvents();
-    } else {
-      handlers.handleNativeEvents();
-    }
-  },
+  mountNodes: nodes.mountNodes,
+  unmountNodes: nodes.unmountNodes,
 };
