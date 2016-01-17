@@ -8,7 +8,7 @@ const OPTIONS_ATTR = 'data-options';
 
 function _findDOMNodes(searchSelector) {
   const selector = searchSelector || '[' + ELEMENT_ATTR + ']';
-  return $ ? $(selector) : document.querySelectorAll(selector);
+  return document.querySelectorAll(selector);
 }
 
 function _nodeData(node) {
@@ -25,7 +25,7 @@ function _nodeData(node) {
 function _mountNode(node) {
   const data = _nodeData(node);
   const config = {
-    node: node,
+    node,
     payload: data.payload,
   };
   const integration = IntegrationsManager.get(data.integrationName);
@@ -37,31 +37,28 @@ function _mountNode(node) {
 }
 
 function _unmountNode(node) {
-  var data = _nodeData(node);
-  var config = {
-    node: node,
+  const data = _nodeData(node);
+  const config = {
+    node,
     payload: data.payload,
   };
 
-  var unmountFunction = IntegrationsManager.get(data.integrationName).unmount;
+  const unmountFunction = IntegrationsManager.get(data.integrationName).unmount;
   if (typeof(unmountFunction) === 'function') { unmountFunction(config, data.options); }
 }
 
 export default {
   mountNodes: function mountNodes(searchSelector) {
-    var nodes = _findDOMNodes(searchSelector);
-    var i;
-    for (i = 0; i < nodes.length; ++i) {
+    const nodes = _findDOMNodes(searchSelector);
+    for (let i = 0; i < nodes.length; ++i) {
       _mountNode(nodes[i]);
     }
   },
 
   unmountNodes: function unmountNodes(searchSelector) {
-    var nodes = _findDOMNodes(searchSelector);
-    var i;
-
-    for (i = 0; i < nodes.length; ++i) {
+    const nodes = _findDOMNodes(searchSelector);
+    for (let i = 0; i < nodes.length; ++i) {
       _unmountNode(nodes[i]);
     }
-  }
-}
+  },
+};

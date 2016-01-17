@@ -15,6 +15,6 @@ class IntegrationsManager {
   register(name, integration) {
     this.integrations[name] = integration;
   }
-};
+}
 
 export default new IntegrationsManager;

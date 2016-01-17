@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class ReactIntegration {
-  constructor(store) {
+  constructor() {
     this.components = {};
     this.registerComponent = this.registerComponent.bind(this);
     this.getComponent = this.getComponent.bind(this);
@@ -20,12 +20,12 @@ class ReactIntegration {
   }
 
   createComponent(name, props) {
-    var constructor = this.getComponent(name);
+    const constructor = this.getComponent(name);
     return React.createElement(constructor, props);
   }
 
   renderComponent(name, props, node) {
-    var component = this.createComponent(name, props);
+    const component = this.createComponent(name, props);
     ReactDOM.render(component, node);
   }
 
@@ -33,6 +33,5 @@ class ReactIntegration {
     ReactDOM.unmountComponentAtNode(node);
   }
 }
-
 
 export default new ReactIntegration;
